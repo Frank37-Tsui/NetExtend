@@ -9,7 +9,7 @@ namespace NetExtend.Utils
 {
     public class CommandUtils
     {
-        public static string ExecuteCommandSync(string command)
+        public static void ExecuteCommandSync(string command)
         {
             try
             {                
@@ -19,8 +19,7 @@ namespace NetExtend.Utils
                 procStartInfo.CreateNoWindow = true;                
                 Process proc = new Process();
                 proc.StartInfo = procStartInfo;
-                proc.Start();                
-                return proc.StandardOutput.ReadToEnd();                
+                proc.Start();                          
             }
             catch
             {
