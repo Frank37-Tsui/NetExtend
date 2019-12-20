@@ -9,7 +9,7 @@ namespace NetExtend.Utils
 {
     public class CommandUtils
     {
-        public static void ExecuteCommandSync(object command)
+        public static string ExecuteCommandSync(string command)
         {
             try
             {                
@@ -20,8 +20,7 @@ namespace NetExtend.Utils
                 Process proc = new Process();
                 proc.StartInfo = procStartInfo;
                 proc.Start();                
-                string result = proc.StandardOutput.ReadToEnd();                
-                Console.WriteLine(result);
+                return proc.StandardOutput.ReadToEnd();                
             }
             catch
             {
