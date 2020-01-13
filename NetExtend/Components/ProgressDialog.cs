@@ -90,6 +90,8 @@ namespace NetExtend.Components
 
         private void Worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
+            Progress = e.ProgressPercentage;
+            Message = $"{Progress}/{Max}";            
             ProgressChanged?.Invoke(this, e);
         }
 
